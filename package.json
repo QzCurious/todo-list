@@ -1,5 +1,5 @@
 {
-  "name": "todolist",
+  "name": "todo-list",
   "private": true,
   "sideEffects": false,
   "type": "module",
