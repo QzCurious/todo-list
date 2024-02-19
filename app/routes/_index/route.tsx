@@ -4,7 +4,7 @@ export default function Index() {
   return (
     <div className="bg-[#DFE0DF] min-h-screen">
         <div className="h-screen max-h-[25vh]"></div>
-      <div className="container mx-auto min-w-0">
+      <div className="container mx-auto min-w-0 px-6">
         <h1 className="font-bold text-[4rem] text-[#222]">Do it Now</h1>
         <section className="mt-7">
           <div className="flex max-w-5xl bg-white rounded-btn h-20 relative items-center">
