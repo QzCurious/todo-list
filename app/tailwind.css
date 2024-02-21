@@ -10,3 +10,7 @@ html {
   font-style: normal;
   font-variation-settings: 'slnt' 0;
 }
+
+body {
+  background: #dfe0df;
+}
