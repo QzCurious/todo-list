@@ -4,6 +4,7 @@ import {
   ClientActionFunctionArgs,
   ClientLoaderFunctionArgs,
   Form,
+  redirect,
   useActionData,
   useLoaderData,
 } from '@remix-run/react'
@@ -13,6 +14,7 @@ import { z } from 'zod'
 import { colors, useTodoListStore } from '~/stores/todoList'
 import deleteIcon from './deleteIcon.svg'
 import plusIcon from './plusIcon.svg'
+import { useRef } from 'react'
 
 const colorAtom = atom<(typeof colors)[number]>(colors[0])
 
@@ -55,19 +57,21 @@ export const clientAction = async ({ request }: ClientActionFunctionArgs) => {
   if (intent === 'addTodo') {
     const { addTodo } = useTodoListStore.getState()
     addTodo({ ...submission.value })
-    return submission.reply({ resetForm: true })
+    return redirect('/')
+    // The cause bug https://github.com/edmundhung/conform/issues/473
+    // return submission.reply({ resetForm: true })
   }
 
   if (intent === 'removeTodo') {
     const { removeTodo } = useTodoListStore.getState()
     removeTodo({ id: submission.value.id })
-    return submission.reply({ resetForm: true })
+    return redirect('/')
   }
 
   if (intent === 'toggleTodo') {
     const { toggleTodo } = useTodoListStore.getState()
     toggleTodo({ id: submission.value.id })
-    return
+    return redirect('/')
   }
 
   return intent satisfies never
