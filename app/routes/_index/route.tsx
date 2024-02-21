@@ -95,11 +95,11 @@ export default function Index() {
   return (
     <div className='min-h-screen bg-[#DFE0DF] pb-6'>
       <div className='h-screen max-h-[25vh]'></div>
-      <div className='mx-auto max-w-6xl px-4'>
-        <div className='flex items-center justify-between'>
-          <h1 className='text-[4rem] font-bold text-[#222]'>Do it Now</h1>
+      <div className='mx-auto max-w-6xl px-4 sm:px-6'>
+        <div className='flex gap-x-4 gap-y-2 flex-wrap'>
+          <h1 className='text-[4rem] leading-none font-bold text-[#222]'>Do it Now</h1>
 
-          <section className='flex justify-center gap-x-2 rounded-btn bg-white px-4 py-6'>
+          <section className='flex justify-center gap-x-2 rounded-btn bg-white px-4 py-6 ml-auto'>
             {colors.map((color) => (
               <button
                 key={color}
@@ -113,7 +113,7 @@ export default function Index() {
           </section>
         </div>
 
-        <section className='mt-7'>
+        <section className='mt-6'>
           <Form
             {...getFormProps(form)}
             method='POST'
