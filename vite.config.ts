@@ -9,5 +9,8 @@ export default defineConfig({
   css: {
     preprocessorMaxWorkers: true,
   },
+  server: {
+    port: 13001,
+  },
   plugins: [remix({ unstable_ssr: false }), tsconfigPaths()],
 })
