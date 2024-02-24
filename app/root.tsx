@@ -7,6 +7,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react'
+import favicon16 from './assets/img/favicon-16x16.png'
+import favicon32 from './assets/img/favicon-32x32.png'
 import tailwind from './tailwind.css?url'
 
 export const links: LinksFunction = () => [
@@ -24,6 +26,8 @@ export const links: LinksFunction = () => [
     rel: 'stylesheet',
     href: tailwind,
   },
+  { rel: 'icon', href: favicon32, type: 'image/png', sizes: '32x32' },
+  { rel: 'icon', href: favicon16, type: 'image/png', sizes: '16x16' },
 ]
 
 export const meta: MetaFunction = () => {
